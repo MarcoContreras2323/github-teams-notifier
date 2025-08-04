@@ -2,10 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
-const TEAMS_WEBHOOK_URL = 'https://aragoconsulting2.webhook.office.com/webhookb2/69df23cf-1a00-46ea-afaf-100865c005d7@b76fac04-4e12-4eb5-b25f-2cca0df5ecd8/IncomingWebhook/5beb3fe2ce5c4ff8846abe9977c7c73b/ce410543-969b-4963-831b-863fe9ade61a/V2vaW2o-OQff7rNNLeF5CwZo7jwTWVkqNNi6ZYA6V_IoU1' // ← Pega aquí tu Webhook de Teams
+const TEAMS_WEBHOOK_URL = 'https://aragoconsulting2.webhook.office.com/webhookb2/69df23cf-1a00-46ea-afaf-100865c005d7@b76fac04-4e12-4eb5-b25f-2cca0df5ecd8/IncomingWebhook/5beb3fe2ce5c4ff8846abe9977c7c73b/ce410543-969b-4963-831b-863fe9ade61a/V2vaW2o-OQff7rNNLeF5CwZo7jwTWVkqNNi6ZYA6V_IoU1';
 
 const app = express();
 app.use(bodyParser.json());
+
+app.get('/', (req, res) => {
+  res.status(200).send('Eso esta más melo que 10');
+});
 
 app.post('/webhook', async (req, res) => {
   const event = req.headers['x-github-event'];
