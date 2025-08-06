@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
-const TEAMS_WEBHOOK_URL = process.env.TEAMS_WEBHOOK_URL;;
+const TEAMS_WEBHOOK_URL = process.env.TEAMS_WEBHOOK_URL;
+
+console.log('Webhook URL de Teams:', TEAMS_WEBHOOK_URL);
 
 const app = express();
 app.use(bodyParser.json());
